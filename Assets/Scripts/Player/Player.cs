@@ -10,7 +10,15 @@ public class Player : MonoBehaviour
     [SerializeField] public Animator playerAnimator;
     public FloatReference playerHp;
     public bool isDied;
-    
+    public static PlayerHealthController playerHealthController;
+    public static PlayerLevelManager playerLevelManager;
+
+    private void Awake()
+    {
+        playerHealthController = FindObjectOfType<PlayerHealthController>();
+        playerLevelManager = FindObjectOfType<PlayerLevelManager>();
+    }
+
     void FixedUpdate()
     {
         PlayerPosition = transform.position;

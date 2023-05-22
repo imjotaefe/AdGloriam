@@ -5,7 +5,22 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     public List<GameObject> pool;
-    
+
+    public GameObject PopulatePool(GameObject element, Vector3 position)
+    {
+        var poolObject = pool.FindLast(item => item.activeSelf == false);
+        if (poolObject)
+        {
+            var objectTransform = poolObject.transform;
+            objectTransform.position = position;
+            poolObject.SetActive(true);
+            return poolObject;
+        }
+        var newInstance = Instantiate(element, position, new Quaternion(0,0,0,0), transform);
+        pool.Add(newInstance);
+        return newInstance;
+    }
+
     public GameObject PopulatePool(GameObject element)
     {
         var poolObject = pool.FindLast(item => item.activeSelf == false);

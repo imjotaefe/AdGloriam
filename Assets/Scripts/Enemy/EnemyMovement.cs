@@ -6,27 +6,32 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private Transform player;
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveSpeed = 3;
     private NavMeshAgent navMeshAgent;
-    [SerializeField] private PlayerHealthController playerHealthController;
-    
+    private Animator monsterAnimator;
+    public Enemy enemy;
+    private XpOrbManager xpOrbManager;
     
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        monsterAnimator = GetComponent<Animator>();
+        enemy = GetComponent<Enemy>();
+        xpOrbManager = FindObjectOfType<XpOrbManager>();
     }
 
     private void Update()
     {
         var minDistance = 3;
-        float dist = Vector3.Distance(transform.position, player.position);
+        float dist = Vector3.Distance(transform.position, Player.PlayerPosition);
         if (dist > minDistance)
         {
             navMeshAgent.isStopped = false;
-            navMeshAgent.destination = new Vector3(player.position.x +0.3f, player.position.y, player.position.z +0.3f);
+            navMeshAgent.destination = new Vector3(Player.PlayerPosition.x +0.3f, Player.PlayerPosition.y, Player.PlayerPosition.z +0.3f);
+            monsterAnimator.SetBool("RUNNING", true);
             return;
         }
+        monsterAnimator.SetBool("RUNNING", false);
         navMeshAgent.isStopped = true;
     }
 
@@ -34,7 +39,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            playerHealthController.ReducePlayerHp(10);
+            // Player.playerHealthController.ReducePlayerHp(10);
+            xpOrbManager.SpawnOrb(enemy.monsterXp, transform.position);
         }
     }
 }
