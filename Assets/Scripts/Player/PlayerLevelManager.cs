@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerLevelManager : MonoBehaviour
 {
-    public float currentXp;
+    [SerializeField] private FloatReference playerXp;
     public int currentLevel;
     
     public void UpdateLevel()
@@ -15,13 +15,13 @@ public class PlayerLevelManager : MonoBehaviour
 
     public void GainXp(float earnedXp)
     {
-        var newXp = currentXp + earnedXp;
+        var newXp = playerXp.Value + earnedXp;
         if (newXp >= 100)
         {
-            currentXp = newXp - 100;
+            playerXp.SetValue(newXp - 100);
             UpdateLevel();
             return;
         }
-        currentXp = newXp;
+        playerXp.SetValue(newXp);
     }
 }

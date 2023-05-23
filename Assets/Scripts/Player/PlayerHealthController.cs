@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerHealthController : MonoBehaviour
     
     [Space]
     [SerializeField] private GameEvent OnPlayerTakeDamage;
-    [SerializeField] private GameEvent OnPlayerDied;
+    [SerializeField] private GameEvent OnPlayerDie;
 
     public void ReducePlayerHp(float damage)
     {
@@ -33,7 +34,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         player.playerAnimator.SetBool("DIED", true);
         player.isDied = true;
-        OnPlayerDied.Raise();
+        OnPlayerDie.Raise();
     }
     
 }

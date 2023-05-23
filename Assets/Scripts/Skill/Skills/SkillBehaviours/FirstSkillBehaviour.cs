@@ -31,6 +31,18 @@ public class FirstSkillBehaviour : MonoBehaviour
         StartCoroutine(DestroyThisObject());
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            var enemyHealthController = other.GetComponent<EnemyHealthController>();
+            enemyHealthController.ReduceEnemyHp(20);
+            _rigidBody.velocity = Vector3.zero;
+            explosionParticle.Play();
+            StartCoroutine(DestroyThisObject());
+        }
+    }
+
     private IEnumerator DestroyThisObject()
     {
         yield return new WaitForSeconds(1);

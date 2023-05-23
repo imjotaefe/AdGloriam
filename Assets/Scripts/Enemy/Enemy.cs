@@ -6,4 +6,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float monsterXp;
+    public bool isDied;
+    public float enemyHp;
+    public float currentEnemyHp;
+    
+    public void ResetEnemy()
+    {
+        currentEnemyHp = enemyHp;
+        isDied = false;
+    }
 }

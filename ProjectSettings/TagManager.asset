@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - XP
+  - Skill
   layers:
   - Default
   - TransparentFX

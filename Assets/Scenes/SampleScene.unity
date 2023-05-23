@@ -292,6 +292,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa853ab45e8959d4cb3e2c261805e8f3, type: 3}
+--- !u!114 &367008237 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1456745614256491047, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+  m_PrefabInstance: {fileID: 1456745615517115747}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &402258265
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 5319125187836261172, guid: 77ac6b8899d66fa4ca843cf7c51e7b74, type: 3}
+  - {fileID: 5319125187836261172, guid: 4832c6c02134e0449ac529a4bf0f6d93, type: 3}
   enemyPool: {fileID: 46117912}
 --- !u!4 &402258267
 Transform:
@@ -2132,14 +2144,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1456745614499731125, guid: be9e0c903844967409c020a2b98501fb, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1456745614499731126, guid: be9e0c903844967409c020a2b98501fb, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1456745614637672992, guid: be9e0c903844967409c020a2b98501fb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2148,33 +2152,45 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1456745614678390105, guid: be9e0c903844967409c020a2b98501fb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.162
+    - target: {fileID: 1456745615469209998, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8505503
       objectReference: {fileID: 0}
     - target: {fileID: 1456745615469209998, guid: be9e0c903844967409c020a2b98501fb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.006971209
+      value: -0.0069711674
       objectReference: {fileID: 0}
     - target: {fileID: 1456745615469209998, guid: be9e0c903844967409c020a2b98501fb, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.004309763
+      value: 0.004309737
       objectReference: {fileID: 0}
-    - target: {fileID: 1456745615660171235, guid: be9e0c903844967409c020a2b98501fb, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1.3000488
+    - target: {fileID: 1456745615724956938, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1456745616053975887, guid: be9e0c903844967409c020a2b98501fb, type: 3}
-      propertyPath: m_TagString
-      value: Player
+    - target: {fileID: 1456745616053975889, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: playerHp.variable
+      value: 
+      objectReference: {fileID: 11400000, guid: eef3f645d850f8b498ba3f4a4c8b8dc8, type: 2}
+    - target: {fileID: 1456745616053975889, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: playerHp.useConstant
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1456745616140787707, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1456745616178169879, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8505503
       objectReference: {fileID: 0}
     - target: {fileID: 1456745616178169879, guid: be9e0c903844967409c020a2b98501fb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.006971209
+      value: -0.0069711674
       objectReference: {fileID: 0}
     - target: {fileID: 1456745616178169879, guid: be9e0c903844967409c020a2b98501fb, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.004309763
+      value: 0.004309737
       objectReference: {fileID: 0}
     - target: {fileID: 1878404585074746373, guid: be9e0c903844967409c020a2b98501fb, type: 3}
       propertyPath: m_RootOrder
@@ -2218,6 +2234,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1878404585074746373, guid: be9e0c903844967409c020a2b98501fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030015695674348513, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: xpIndicator
+      value: 
+      objectReference: {fileID: 367008237}
+    - target: {fileID: 3030015695674348513, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: playerHp.variable
+      value: 
+      objectReference: {fileID: 11400000, guid: eef3f645d850f8b498ba3f4a4c8b8dc8, type: 2}
+    - target: {fileID: 3030015695674348513, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: playerXp.variable
+      value: 
+      objectReference: {fileID: 11400000, guid: dd10fbea53006b147a36b1de408d73b4, type: 2}
+    - target: {fileID: 3030015695674348513, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: playerHp.useConstant
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030015695674348513, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: playerXp.useConstant
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059716381277292871, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: playerXp.variable
+      value: 
+      objectReference: {fileID: 11400000, guid: dd10fbea53006b147a36b1de408d73b4, type: 2}
+    - target: {fileID: 3059716381277292871, guid: be9e0c903844967409c020a2b98501fb, type: 3}
+      propertyPath: playerXp.useConstant
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3462335593880114310, guid: be9e0c903844967409c020a2b98501fb, type: 3}

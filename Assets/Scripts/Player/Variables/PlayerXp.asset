@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5e73863c15f2294dbc11881251bd8ba, type: 3}
-  m_Name: OnPlayerDied
+  m_Script: {fileID: 11500000, guid: 5becf8ce0d511de4fbce68aba3283693, type: 3}
+  m_Name: PlayerXp
   m_EditorClassIdentifier: 
+  Value: 40

@@ -12,7 +12,7 @@ public class FirstSkill : Skill
     protected override void FireSkill()
     {
         base.FireSkill();
-        Collider[] hitColliders = Physics.OverlapSphere(Player.PlayerPosition, 25f, LayerMask.GetMask("Enemy"));
+        Collider[] hitColliders = Physics.OverlapSphere(Player.PlayerPosition, 15f, LayerMask.GetMask("Enemy"));
         if (hitColliders.Length == 0) return;
         var skill = skillPool.PopulatePool(skillPrefab);
         var skillBehaviour = skill.GetComponent<FirstSkillBehaviour>();

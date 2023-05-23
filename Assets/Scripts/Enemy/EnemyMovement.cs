@@ -10,18 +10,16 @@ public class EnemyMovement : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private Animator monsterAnimator;
     public Enemy enemy;
-    private XpOrbManager xpOrbManager;
     
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         monsterAnimator = GetComponent<Animator>();
-        enemy = GetComponent<Enemy>();
-        xpOrbManager = FindObjectOfType<XpOrbManager>();
     }
 
     private void Update()
     {
+        if (enemy.isDied) return;
         var minDistance = 3;
         float dist = Vector3.Distance(transform.position, Player.PlayerPosition);
         if (dist > minDistance)
@@ -40,7 +38,6 @@ public class EnemyMovement : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             // Player.playerHealthController.ReducePlayerHp(10);
-            xpOrbManager.SpawnOrb(enemy.monsterXp, transform.position);
         }
     }
 }
