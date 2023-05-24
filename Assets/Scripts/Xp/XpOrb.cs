@@ -10,9 +10,11 @@ public class XpOrb : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        var player = other.GetComponent<PlayerLevelManager>();
-        player.GainXp(orbXp);
-        orbXpPool.RemoveFromPool(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            var player = other.GetComponent<PlayerLevelManager>();
+            player.GainXp(orbXp);
+            orbXpPool.RemoveFromPool(gameObject);
+        }
     }
-
 }
